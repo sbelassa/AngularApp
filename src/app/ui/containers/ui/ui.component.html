@@ -1,8 +1,8 @@
 <header class="fixed-top">
-  <app-header></app-header>
+  <app-header #header></app-header>
 </header>
 
-<main>
+<main [ngClass]="{'close-aside' : header.open === false}">
   <div class="shadow position-fixed">
   </div>
   <aside>
@@ -12,9 +12,8 @@
   </aside>
 
   <div class="page">
-
     <div class="contents">
-      contents
+        <router-outlet></router-outlet>
     </div>
 
     <footer>
