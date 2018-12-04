@@ -5,4 +5,4 @@ Todo:
   ✔ créer PageNotFoundRoutingModule @done(18-12-04 11:42)
   ✔ ajouter une route pour instancier PageNotFoundRoutngModule @done(18-12-04 11:42)
   ✔ créer LoginRoutingModule @started(18-12-04 11:42) @done(18-12-04 11:44) @lasted(2m33s)
-  ☐ deplacer la route /login @started(18-12-04 11:44)
+  ✔ deplacer la route /login @started(18-12-04 11:44) @done(18-12-04 13:41) @lasted(1h57m26s)
