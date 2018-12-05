@@ -22,7 +22,9 @@ export class PrestationService {
     this._collection = col;
   }
   // add Item in Collection
-
+public add(item: Prestation): void {
+    this.collection.push(item);
+}
   // update Item In Collection
   public update(item: Prestation, state: State) {
     item.state = state;
