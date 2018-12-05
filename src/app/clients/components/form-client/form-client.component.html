@@ -1,0 +1,26 @@
+<div class="container">
+    <form novalidate #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="id">id</label>
+            <input name="id" type="text" class="form-control" id="id" required minlength="3" [(ngModel)]="init.id">
+          </div>
+
+      <div class="form-group">
+        <label for="nom">nom</label>
+        <input name="nom" type="text" class="form-control" id="nom" required [(ngModel)]="init.nom">
+        {{ init.nom }}
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input name="email" type="text" class="form-control" id="email" required minlength="3" [(ngModel)]="init.email">
+      </div>
+
+          <div class="form-group">
+              <label for="state">state</label>
+              <select name="state" class="form-control" id="type" [(ngModel)]="init.state" [value]="init.state">
+                <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+              </select>
+            </div>
+      <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

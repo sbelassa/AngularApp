@@ -26,8 +26,8 @@ export class ClientService {
     item.state = state;
   }
 
-  // add Item In Collection
-  public addClient(item: Client, list: Client[]) {
-    list.push(item);
+  // add Item in Collection
+  public add(item: Client): void {
+    this.collection.push(new Client(item));
   }
 }
