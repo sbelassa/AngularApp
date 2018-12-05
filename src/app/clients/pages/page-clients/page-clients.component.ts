@@ -12,4 +12,7 @@ export class PageClientsComponent implements OnInit {
   ngOnInit() {
   }
 
+  addClient(client) {
+    
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Prestation } from 'src/app/shared/models/prestation';
-import { State } from 'src/app/shared/anums/state.enum';
+import { State } from 'src/app/shared/enums/state.enum';
 import { PrestationService } from '../../services/prestation.service';
 
 @Component({

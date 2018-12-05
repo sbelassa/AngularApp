@@ -1,0 +1,34 @@
+@import '~src/variables';
+
+#tab .state-inactive,
+#tab .state-annule {
+    background: $palette-color-two;
+}
+#tab .state-active,
+#tab .state-confirme {
+    background: $palette-color-four;
+ }
+#tab .state-option {
+  background: $palette-color-three;
+ }
+
+ .table-striped tbody > *:nth-of-type(odd) tr {
+   background: darken($light-color, 15);
+ }
+
+tbody > * {
+  display: contents;
+}
+
+app-page-prestations thead {
+  background: $dark-color;
+  color: $light-color;
+}
+
+app-template-a tbody {
+
+}
+
+app-template-b tbody {
+
+}

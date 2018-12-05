@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { fakePrestation } from './fake-prestation';
-import { State } from 'src/app/shared/anums/state.enum';
+import { State } from 'src/app/shared/enums/state.enum';
 
 @Injectable({
   providedIn: 'root' // on pourra changer ça pour le faire injecter dans un module à la place de 'root'

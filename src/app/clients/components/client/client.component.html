@@ -1,10 +1,7 @@
 <tr>
-    <td>{{ item.typePresta }}</td>
-    <td>{{ item.client }}</td>
-    <td>{{ item.nbJour }}</td>
-    <td>{{ item.tjmHt | currency:'EUR'}}</td>
-    <td>{{ item | total | currency:'EUR'}}</td>
-    <td>{{ item | total:item.tauxTva | currency:'EUR'}}</td>
+    <td>{{ item.id }}</td>
+    <td>{{ item.nom }}</td>
+    <td>{{ item.email }}</td>
     <td [appState]="item.state">
       <select (change)="changeState($event)">
         <option [value]="item.state">{{ item.state }}</option>

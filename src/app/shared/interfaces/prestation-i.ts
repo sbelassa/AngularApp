@@ -1,4 +1,4 @@
-import { State } from '../anums/state.enum';
+import { State } from '../enums/state.enum';
 
 export interface PrestationI {
   id: string;

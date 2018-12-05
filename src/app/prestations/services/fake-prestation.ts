@@ -1,5 +1,5 @@
 import { Prestation } from 'src/app/shared/models/prestation';
-import { State } from 'src/app/shared/anums/state.enum';
+import { State } from 'src/app/shared/enums/state.enum';
 
 export const fakePrestation: Prestation[] = [
   new Prestation(
