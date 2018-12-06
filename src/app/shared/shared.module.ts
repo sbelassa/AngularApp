@@ -10,7 +10,7 @@ import { TemplateModule } from '../template/template.module';
 
 @NgModule({
   declarations: [TotalPipe, TableauComponent, StateDirective, AddRowComponent],
-  exports: [TotalPipe, TableauComponent, StateDirective, AddRowComponent, TemplateModule],
+  exports: [TotalPipe, TableauComponent, StateDirective, AddRowComponent, TemplateModule, FontAwesomeModule],
   imports: [
     CommonModule,
     FontAwesomeModule,

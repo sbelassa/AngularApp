@@ -31,9 +31,6 @@ export class FormReactiveClientComponent implements OnInit {
 
   private createForm() {
     this.form = this.fb.group({
-      id: [
-        this.init.id
-      ],
       nom: [
         this.init.nom,
         Validators.compose([Validators.required, Validators.minLength(3)])

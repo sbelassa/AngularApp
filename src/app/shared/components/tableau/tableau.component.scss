@@ -23,6 +23,11 @@ tbody > * {
 app-page-prestations thead {
   background: $dark-color;
   color: $light-color;
+  text-align: center;
+}
+
+app-page-clients thead {
+  text-align: center;
 }
 
 app-template-a tbody {
@@ -31,4 +36,12 @@ app-template-a tbody {
 
 app-template-b tbody {
 
+}
+
+#head td:last-child() {
+  text-align: center;
+}
+
+#tab {
+  text-align: center;
 }

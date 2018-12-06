@@ -1,5 +1,4 @@
 <tr>
-    <td>{{ item.id }}</td>
     <td>{{ item.nom }}</td>
     <td>{{ item.email }}</td>
     <td [appState]="item.state">
@@ -9,5 +8,10 @@
             <option *ngIf="item.state !== state"  [value]="state">{{ state }}</option>
         </ng-container>
       </select>
+    </td>
+    <td>
+        <span (click)="delete()">
+            <fa-icon [icon]="faTrash"></fa-icon>
+        </span>
     </td>
   </tr>

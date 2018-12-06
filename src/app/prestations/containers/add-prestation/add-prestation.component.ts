@@ -17,7 +17,19 @@ export class AddPrestationComponent implements OnInit {
   }
 
   public add(item: Prestation) {
-    this.ps.add(item);
-    this.router.navigate(['../'], {relativeTo: this.ar}); //redirect to prestations page
+    this.ps.add(item).then((data) => {
+      // traitement reponse api
+      this.router.navigate(['../'], {relativeTo: this.ar}); //redirect to prestations page
+    });
+
+    /*
+    //for calling a real API
+    this.ps.add(item).subscribe((data) => {
+      // traitement reponse api
+      this.router.navigate(['../'], {relativeTo: this.ar}); //redirect to prestations page
+    });
+
+    // think to unsubscribe dans le ngOndestro
+    */
   }
 }

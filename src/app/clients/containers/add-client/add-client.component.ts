@@ -17,8 +17,10 @@ export class AddClientComponent implements OnInit {
   }
 
   public add(item: Client) {
-    this.ps.add(item);
-    this.router.navigate(['../'], {relativeTo: this.ar});
+    this.ps.add(item).then((data) => {
+      // traitement reponse api
+      this.router.navigate(['../'], {relativeTo: this.ar}); //redirect to clients page
+    });
   }
 
 }

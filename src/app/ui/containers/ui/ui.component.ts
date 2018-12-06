@@ -12,4 +12,8 @@ export class UiComponent implements OnInit {
   ngOnInit() {
   }
 
+  close() {
+    
+  }
+
 }

@@ -12,7 +12,8 @@ import { PageAddClientsComponent } from './pages/page-add-clients/page-add-clien
 import { FormClientComponent } from './components/form-client/form-client.component';
 
 @NgModule({
-  declarations: [PageClientsComponent, ListClientsComponent, ClientComponent, FormReactiveClientComponent, AddClientComponent, PageAddClientsComponent, FormClientComponent],
+  declarations: [PageClientsComponent, ListClientsComponent, ClientComponent,
+     FormReactiveClientComponent, AddClientComponent, PageAddClientsComponent, FormClientComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,

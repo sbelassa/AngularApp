@@ -19,7 +19,7 @@ import { PrestationsRoutingModule } from './prestations-routing.module';
     PrestationsRoutingModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class PrestationsModule { }
