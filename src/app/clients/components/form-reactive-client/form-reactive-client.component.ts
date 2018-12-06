@@ -40,6 +40,7 @@ export class FormReactiveClientComponent implements OnInit {
         Validators.compose([Validators.required, Validators.minLength(6)])
       ],
       state: [this.init.state],
+      comment: [this.init.comment],
     });
   }
 

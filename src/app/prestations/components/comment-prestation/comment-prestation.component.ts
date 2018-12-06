@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Prestation } from 'src/app/shared/models/prestation';
+import { PrestationService } from '../../services/prestation.service';
 
 @Component({
   selector: 'app-comment-prestation',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment-prestation.component.scss']
 })
 export class CommentPrestationComponent implements OnInit {
+  public presta$: BehaviorSubject<Prestation>;
 
-  constructor() { }
+  constructor(private ps: PrestationService) { }
 
   ngOnInit() {
+    this.presta$ = this.ps.presta$;
   }
 
 }

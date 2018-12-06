@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../../services/client.service';
+import { BehaviorSubject } from 'rxjs';
+import { Client } from 'src/app/shared/models/client';
 
 @Component({
   selector: 'app-detail-client',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailClientComponent implements OnInit {
 
-  constructor() { }
+  public client$: BehaviorSubject<Client>;
+
+  constructor(private ps: ClientService) {
+  }
 
   ngOnInit() {
+    this.client$ = this.ps.client$;
   }
 
 }

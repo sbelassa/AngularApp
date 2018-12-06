@@ -46,6 +46,7 @@ export class FormReactivePrestationComponent implements OnInit {
       tjmHt: [this.init.tjmHt],
       tauxTva: [this.init.tauxTva],
       state: [this.init.state],
+      comment: [this.init.comment],
     });
   }
 }

@@ -12,6 +12,7 @@ import { PageAddClientsComponent } from './pages/page-add-clients/page-add-clien
 import { FormClientComponent } from './components/form-client/form-client.component';
 import { DetailClientComponent } from './components/detail-client/detail-client.component';
 import { CommentClientComponent } from './components/comment-client/comment-client.component';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [PageClientsComponent, ListClientsComponent, ClientComponent,
@@ -22,7 +23,8 @@ import { CommentClientComponent } from './components/comment-client/comment-clie
     ClientsRoutingModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbAccordionModule
   ]
 })
 export class ClientsModule { }

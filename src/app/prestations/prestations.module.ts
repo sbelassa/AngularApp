@@ -12,6 +12,7 @@ import { PagePrestationsComponent } from './pages/page-prestations/page-prestati
 import { PrestationsRoutingModule } from './prestations-routing.module';
 import { DetailPrestationComponent } from './components/detail-prestation/detail-prestation.component';
 import { CommentPrestationComponent } from './components/comment-prestation/comment-prestation.component';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [PagePrestationsComponent, ListPrestationsComponent, PrestationComponent,
@@ -23,6 +24,7 @@ import { CommentPrestationComponent } from './components/comment-prestation/comm
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbAccordionModule
   ]
 })
 export class PrestationsModule { }

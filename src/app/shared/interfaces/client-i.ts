@@ -4,5 +4,6 @@ export interface ClientI {
   id: string;
   nom: string;
   email: string;
+  comment: string;
   state: ClientState;
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PrestationService } from '../../services/prestation.service';
+import { Prestation } from 'src/app/shared/models/prestation';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-detail-prestation',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-prestation.component.scss']
 })
 export class DetailPrestationComponent implements OnInit {
+  public presta$: BehaviorSubject<Prestation>;
 
-  constructor() { }
+  constructor(private ps: PrestationService) {
+  }
 
   ngOnInit() {
+    this.presta$ = this.ps.presta$;
   }
 
 }

@@ -1,8 +1,8 @@
-<tr>
+<tr (click)="getDetail()">
     <td>{{ item.nom }}</td>
     <td>{{ item.email }}</td>
     <td [appState]="item.state">
-      <select (change)="changeState($event)">
+      <select (change)="changeState($event)" (click)="$event.stopPropagation()">
         <option [value]="item.state">{{ item.state }}</option>
         <ng-container *ngFor="let state of states">
             <option *ngIf="item.state !== state"  [value]="state">{{ state }}</option>
@@ -10,7 +10,7 @@
       </select>
     </td>
     <td>
-        <span (click)="delete()">
+        <span (click)="$event.stopPropagation(); delete()">
             <fa-icon [icon]="faTrash"></fa-icon>
         </span>
     </td>

@@ -31,6 +31,12 @@
               <option *ngFor="let state of states" [value]="state">{{ state }}</option>
             </select>
           </div>
+
+          <div class="form-group">
+              <label for="comment">Comment</label>
+              <textarea name="comment" type="number" class="form-control" id="comment" [(ngModel)]="init.comment"> </textarea>
+            </div>
+
     <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { State } from 'src/app/shared/enums/state.enum';
 import { Prestation } from 'src/app/shared/models/prestation';
@@ -9,19 +9,25 @@ import { Prestation } from 'src/app/shared/models/prestation';
 @Injectable({
   providedIn: 'root' // on pourra changer ça pour le faire injecter dans un module à la place de 'root'
 })
+
 export class PrestationService {
   private itemsCollection: AngularFirestoreCollection<Prestation>;
   private _collection$: Observable<Prestation[]>;
+  public presta$: BehaviorSubject<Prestation> = new BehaviorSubject(null); // il stock le dernier flux des info reçu
 
   constructor(private afs: AngularFirestore, private http: HttpClient) {
-    //this.collection$ = fakePrestation; // ne pas faire _collection --> pour passer par un setter et ne pas affecter la variable directement
+    // this.collection$ = fakePrestation; // ne pas faire _collection --> pour passer par un setter et ne pas affecter la variable directement
     this.itemsCollection = afs.collection<Prestation>('prestations');
     this.collection$ = this.itemsCollection.valueChanges().pipe(
-      //map(data => data.map(doc => new Prestation(doc))); // better syntaxe for ES6
       map((data) => {
-        return data.map((doc) => {
-          return new Prestation(doc);
-        });
+      if (data.length > 0) {
+        this.presta$.next(new Prestation(data[0]));
+          return data.map((doc) => {
+            return new Prestation(doc);
+          });
+      }
+        this.presta$.next(null);
+        return null;
       })
     );
       /*this._collection$ = this.http.get(`${URL_API}/prestations`).pipe(

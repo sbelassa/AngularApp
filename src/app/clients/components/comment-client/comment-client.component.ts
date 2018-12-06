@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Client } from 'src/app/shared/models/client';
+import { ClientService } from '../../services/client.service';
 
 @Component({
   selector: 'app-comment-client',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment-client.component.scss']
 })
 export class CommentClientComponent implements OnInit {
+  public client$: BehaviorSubject<Client>;
 
-  constructor() { }
+  constructor(private ps: ClientService) { }
 
   ngOnInit() {
+    this.client$ = this.ps.client$;
   }
 
 }

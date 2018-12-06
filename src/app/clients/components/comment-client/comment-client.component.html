@@ -1,3 +1,2 @@
-<p>
-  comment-client works!
-</p>
+<p *ngIf="client$ | async as client"> {{ client.comment }}</p>
+

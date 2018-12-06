@@ -31,4 +31,8 @@ export class ClientComponent implements OnInit {
   delete() {
     this.ps.delete(this.item).then((data) => {});
   }
+
+  public getDetail() {
+    this.ps.client$.next(this.item);
+  }
 }

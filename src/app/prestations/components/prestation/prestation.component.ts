@@ -38,9 +38,13 @@ export class PrestationComponent implements OnInit {
      */
   }
 
-  //delete to be added here with the then
+  // delete to be added here with the then
   delete() {
     this.ps.delete(this.item).then((data) => {});
-    //this.ps.delete(this.item).subscribe((data) => {}); // unsubscribe OnDestroy
+    // this.ps.delete(this.item).subscribe((data) => {}); // unsubscribe OnDestroy
+  }
+
+  public getDetail() {
+    this.ps.presta$.next(this.item);
   }
 }

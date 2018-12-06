@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Client } from 'src/app/shared/models/client';
-import { fakeClients } from './fake-clients';
 import { ClientState } from 'src/app/shared/enums/client-state.enum';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -13,11 +12,17 @@ export class ClientService {
 
   private itemsCollection: AngularFirestoreCollection<Client>;
   private _collection$: Observable<Client[]>;
+  public client$: BehaviorSubject<Client> = new BehaviorSubject(null); // il stock le dernier flux des info reçu
 
   constructor(private afs: AngularFirestore) {
     this.itemsCollection = afs.collection<Client>('clients');
     this.collection$ = this.itemsCollection.valueChanges().pipe(
-      map(data => data.map(doc => new Client(doc))) //  syntaxe for ES6
+      map((data) => {
+        this.client$.next(new Client(data[0]));
+        return data.map((doc) => {
+          return new Client(doc);
+        });
+      })
     );
   }
 

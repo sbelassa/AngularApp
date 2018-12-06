@@ -5,6 +5,7 @@ export class Client implements ClientI {
   id: string;
   nom: string;
   email: string;
+  comment: string;
   state = ClientState.ACTIVE;
 
   constructor(fields?: Partial<Client>) {

@@ -1,3 +1,8 @@
-<p>
-  detail-client works!
-</p>
+<ngb-accordion [closeOthers]="true" activeIds="static-1" *ngIf="client$ | async as client">
+
+    <ngb-panel id="static-1" title="infos">
+      <ng-template ngbPanelContent>
+        <p> {{ client.nom }}</p>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
