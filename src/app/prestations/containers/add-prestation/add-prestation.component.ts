@@ -29,7 +29,7 @@ export class AddPrestationComponent implements OnInit {
       this.router.navigate(['../'], {relativeTo: this.ar}); //redirect to prestations page
     });
 
-    // think to unsubscribe dans le ngOndestro
+    // think to unsubscribe dans le ngOndestroy
     */
   }
 }

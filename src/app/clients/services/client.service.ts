@@ -56,7 +56,7 @@ export class ClientService {
     });
   }
 
-  getPrestation(id: string): Observable<Client> {
+  getClient(id: string): Observable<Client> {
     return this.itemsCollection.doc<Client>(id).valueChanges();
   }
 

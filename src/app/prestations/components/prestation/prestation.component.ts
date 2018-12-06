@@ -26,10 +26,21 @@ export class PrestationComponent implements OnInit {
       // response api
       this.item.state = state;
     });
+
+    /**
+     * in the api case
+     * this.ps.update(this.item, state).subscribe((data) => {
+      // response api
+      this.item.state = state;
+    });
+
+      // think to unsubscribe dans le ngOndestroy
+     */
   }
 
   //delete to be added here with the then
   delete() {
     this.ps.delete(this.item).then((data) => {});
+    //this.ps.delete(this.item).subscribe((data) => {}); // unsubscribe OnDestroy
   }
 }

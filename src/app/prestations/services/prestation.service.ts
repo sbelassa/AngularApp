@@ -61,7 +61,7 @@ export class PrestationService {
     return this.itemsCollection.doc(item.id).update(presta).catch((e) => {
       console.log(e);
     });
-    // return this.http.patch('urlapi/prestationupdate/'+item.id, presta);
+    // return this.http.patch(`${URL_API}/prestationupdate/+${item.id}`, presta);
   }
 
   // then is used in
@@ -69,12 +69,12 @@ export class PrestationService {
     return this.itemsCollection.doc(item.id).delete().catch((e) => {
       console.log(e);
     });
-    // return this.http.delete(`urlapi/prestations/delete/${item.id}`);
+    // return this.http.delete(`${URL_API}/prestations/delete/${item.id}`);
   }
 
   getPrestation(id: string): Observable<Prestation> {
     return this.itemsCollection.doc<Prestation>(id).valueChanges();
-    // return this.http.get(`urlapi/prestations/get/${id}`);
+    // return this.http.get(`${URL_API}/prestations/${id}`);
   }
 
 }
