@@ -10,10 +10,13 @@ import { ListPrestationsComponent } from './containers/list-prestations/list-pre
 import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add-prestation.component';
 import { PagePrestationsComponent } from './pages/page-prestations/page-prestations.component';
 import { PrestationsRoutingModule } from './prestations-routing.module';
+import { DetailPrestationComponent } from './components/detail-prestation/detail-prestation.component';
+import { CommentPrestationComponent } from './components/comment-prestation/comment-prestation.component';
 
 @NgModule({
   declarations: [PagePrestationsComponent, ListPrestationsComponent, PrestationComponent,
-     PageAddPrestationComponent, AddPrestationComponent, FormPrestationComponent, FormReactivePrestationComponent],
+    PageAddPrestationComponent, AddPrestationComponent, FormPrestationComponent, FormReactivePrestationComponent,
+      DetailPrestationComponent, CommentPrestationComponent],
   imports: [
     CommonModule,
     PrestationsRoutingModule,
