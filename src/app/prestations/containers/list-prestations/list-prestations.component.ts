@@ -17,7 +17,10 @@ export class ListPrestationsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.collection = this.ps.collection;
+    //this.collection = this.ps.collection;
+    this.ps.collection$.subscribe((date) => {
+      this.collection = date;
+    });
     this.headers = [
       'typePresta',
       'client',
