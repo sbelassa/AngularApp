@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ClientState } from 'src/app/shared/enums/client-state.enum';
 import { Client } from 'src/app/shared/models/client';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -13,7 +13,7 @@ export class FormReactiveClientComponent implements OnInit {
   public states = Object.values(ClientState);
   @Output() nItem: EventEmitter<Client> = new EventEmitter();
   public form: FormGroup;
-  public init = new Client();
+  @Input() init = new Client();
 
   constructor(private fb: FormBuilder) { }
 

@@ -13,12 +13,13 @@ export class FormReactivePrestationComponent implements OnInit {
   public states = Object.values(State);
   @Output() nItem: EventEmitter<Prestation> = new EventEmitter();
   public form: FormGroup;
-  public init = new Prestation();
+  @Input() init = new Prestation(); // to change into input
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.createForm();
+    //
   }
 
   public onSubmit(): void {

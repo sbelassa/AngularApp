@@ -13,11 +13,13 @@ import { PrestationsRoutingModule } from './prestations-routing.module';
 import { DetailPrestationComponent } from './components/detail-prestation/detail-prestation.component';
 import { CommentPrestationComponent } from './components/comment-prestation/comment-prestation.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { PageEditPrestationComponent } from './pages/page-edit-prestation/page-edit-prestation.component';
+import { EditPrestationtComponent } from './containers/edit-prestationt/edit-prestationt.component';
 
 @NgModule({
   declarations: [PagePrestationsComponent, ListPrestationsComponent, PrestationComponent,
     PageAddPrestationComponent, AddPrestationComponent, FormPrestationComponent, FormReactivePrestationComponent,
-      DetailPrestationComponent, CommentPrestationComponent],
+      DetailPrestationComponent, CommentPrestationComponent, PageEditPrestationComponent, EditPrestationtComponent],
   imports: [
     CommonModule,
     PrestationsRoutingModule,

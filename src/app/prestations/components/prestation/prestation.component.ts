@@ -2,7 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { State } from 'src/app/shared/enums/state.enum';
 import { PrestationService } from '../../services/prestation.service';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { PrestationResolverService } from '../../services/prestation-resolver.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prestation',
@@ -11,10 +13,11 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 })
 export class PrestationComponent implements OnInit {
   public faTrash = faTrash;
+  public faEdit = faEdit;
   @Input() item: Prestation;
   public states = Object.values(State);
 
-  constructor(private ps: PrestationService) {
+  constructor(private ps: PrestationService, private router: Router) {
   }
 
   ngOnInit() {
@@ -46,5 +49,9 @@ export class PrestationComponent implements OnInit {
 
   public getDetail() {
     this.ps.presta$.next(this.item);
+  }
+
+  public edit() {
+    this.router.navigate(['prestations/edit', this.item.id]);
   }
 }

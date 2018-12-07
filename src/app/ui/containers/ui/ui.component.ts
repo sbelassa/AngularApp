@@ -13,7 +13,6 @@ export class UiComponent implements OnInit {
   }
 
   close() {
-    
   }
 
 }

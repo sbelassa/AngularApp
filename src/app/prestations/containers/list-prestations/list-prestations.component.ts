@@ -35,6 +35,7 @@ export class ListPrestationsComponent implements OnInit {
       'totalTTC',
       'state',
       'delete',
+      'edit',
     ];
   }
 

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Client } from 'src/app/shared/models/client';
-import { ClientState } from 'src/app/shared/enums/client-state.enum';
-import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ClientState } from 'src/app/shared/enums/client-state.enum';
+import { Client } from 'src/app/shared/models/client';
 
 @Injectable({
   providedIn: 'root'

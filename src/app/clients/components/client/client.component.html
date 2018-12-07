@@ -14,4 +14,9 @@
             <fa-icon [icon]="faTrash"></fa-icon>
         </span>
     </td>
+    <td>
+        <span (click)="$event.stopPropagation(); edit()">
+          <fa-icon [icon]="faEdit"></fa-icon>
+        </span>
+    </td>
   </tr>

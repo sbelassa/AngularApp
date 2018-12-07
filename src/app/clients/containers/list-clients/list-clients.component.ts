@@ -21,6 +21,7 @@ export class ListClientsComponent implements OnInit {
       'email',
       'state',
       'delete',
+      'edit',
     ];
   }
 

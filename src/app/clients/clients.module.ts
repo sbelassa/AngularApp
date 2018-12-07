@@ -13,11 +13,13 @@ import { FormClientComponent } from './components/form-client/form-client.compon
 import { DetailClientComponent } from './components/detail-client/detail-client.component';
 import { CommentClientComponent } from './components/comment-client/comment-client.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditClientComponent } from './containers/edit-client/edit-client.component';
+import { PageEditClientComponent } from './pages/page-edit-client/page-edit-client.component';
 
 @NgModule({
   declarations: [PageClientsComponent, ListClientsComponent, ClientComponent,
-     FormReactiveClientComponent, AddClientComponent, PageAddClientsComponent, FormClientComponent,
-      DetailClientComponent, CommentClientComponent],
+    FormReactiveClientComponent, AddClientComponent, PageAddClientsComponent, FormClientComponent,
+      DetailClientComponent, CommentClientComponent, EditClientComponent, PageEditClientComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,

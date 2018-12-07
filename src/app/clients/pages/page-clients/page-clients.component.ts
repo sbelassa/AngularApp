@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LinksI } from 'src/app/shared/interfaces/links-i';
+import { Observable } from 'rxjs';
+import { ActivatedRoute, Data } from '@angular/router';
+import { pluck } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page-clients',
@@ -8,10 +11,16 @@ import { LinksI } from 'src/app/shared/interfaces/links-i';
 })
 export class PageClientsComponent implements OnInit {
   public list: LinksI[];
-  constructor() {
+  title$: Observable<string>;
+
+  constructor(private ar: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.title$ = this.ar.data.pipe(
+      pluck('title')
+    );
+
     this.list = [
       {
         route: 'comment',
